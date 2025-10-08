@@ -1,1 +1,139 @@
+html {
+    box-sizing: border-box;
+}
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+header {
+    border-top: 4px solid rgba(0, 0, 0, 0.1);
+    margin-left: -2em;
+    margin-right: -2em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+header nav {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 1em 1em 0.5em 1em;
+    color: #ffffff;
+    border-top: 4px solid rgba(0, 123, 255, 0);
+    transition: border-color 0.3s;
+}
+
+header nav a:hover {
+    border-top-color: rgba(0, 123, 255, 1);
+}
+
+.width-wrap {
+    max-width: 960px;
+    margin: 0 auto 3em;
+    padding: 0 2em 2em;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-top: none;
+    background-color: #FFAEBC;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #A796CE;
+    color: #2c2c2c;
+}
+
+footer hr {
+    border: none;
+    height: 0;
+    width: 50vw;
+    min-width: 300px;
+    max-width: 890px;
+    margin: 3em auto 2em;
+    border-bottom: 3px dotted purple;
+}
+
+dl dt::after {
+    content: ": ";
+}
+
+h1,
+h2,
+h3 {
+    color: #4b0082;
+}
+
+a {
+    color: #006699;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+::selection {
+    background-color: #FFD700;
+    color: #000000;
+}
+
+table th,
+table td {
+    padding: 0.3em 1em;
+}
+thead th,
+tfoot th,
+tbody th {
+    background-color: rgba(0,0,0,0.2);
+}
+
+tbody td {
+    background-color: rgba(0,0,0,0.05);
+}
+
+tbody tr:nth-child(even) td {
+    background-color: rgba(0,0,0,0.15);
+}
+
+form label {
+    display: block;
+}
+
+input[type= "checkbox"] + label,
+input[type= "radio"] + label {
+    display: inline;
+}
+
+input[type= "submit"], 
+button[type= "submit"] {
+    border: none;
+    padding: 1em 3em;
+    color: #fff;
+    background-color:#0077cc;
+    cursor: pointer;
+    border-radius: 0.5em;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    background-color: #ffe6e6;
+}
