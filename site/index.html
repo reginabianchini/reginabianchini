@@ -26,14 +26,17 @@
                 <li><a href="links.html">Links</a></li>
                 <li><a href="glossary.html">Glossary</a></li>
                 <li><a href="survey.html">Survey</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
             </ul>
         </nav>
 
         <main>
             <h1>Welcome to Regina's Website!</h1>
             <div class="bio">
+                <a href="images/logo.jpg">
                 <img src="images/logo.jpg" width="600" height="500" alt="Siberian Huslie Picture">
-           
+                <img src="image/paperclip.png" class="paperclip" alt="paperclip">
+            </a>
                 <p>Hi, my name is Regina!
                 I am from Brazil, and one of my greatest passions is reading. Books have always been a way for me to
                 travel through different worlds,
@@ -136,22 +139,34 @@
                 </div>
             </div>
             <h2>My Favorite Things</h2>
-
+            <div class="favorites">
+                <h3>Favorite Photo</h3>
+                <input type="radio" name="favtabs" id="tab1" checked>
+                <label for="tab1"><h3>Cute Dog</h3></label>
+                <div>
             <a href="https://dogtime.com/dog-breeds/siberian-husky" target="_blank">
                 <img src="images/logo.jpg" width="600" height="500" alt="Siberian Huskie Picture"></a>
-            <h3>Books</h3>
+            </div>
+            <input type="radio" name="favtabs" id="tab2">
+            <label for="tab2"><h3>Books</h3></label>
+            <div>
             <ol>
                 <li>Romance</li>
                 <li>Fantasy</li>
                 <li>Adventure</li>
             </ol>
-            <h3>Haiku</h3>
+        </div>
+        <input type="radio" name="favtabs" id="tab3">
+        <label for="lab3"><h3>Haiku</h3></label>
+        <div>
             <p>“Sand scatters the beach <br><br>
                 Waves crash on the sandy shore <br><br>
                 Blue water shimmers.”
                 <br>
                 <cite><span class="author">by Kaitlyn Guenther</span></cite>
             </p>
+        </div>
+    </div>
         </main>
         <footer>
             <hr>

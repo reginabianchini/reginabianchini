@@ -24,12 +24,12 @@ header nav {
 }
 
 header nav ul {
+    list-style: none; 
     margin: 0;
     padding: 0;
-}
-
-header nav ul li {
-    display: inline;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
 
 header nav a {
@@ -193,6 +193,11 @@ h1 {
     margin-bottom: 1em;
 }
 
+.bio a{
+    display: block;
+    position: relative;
+}
+
 .bio table {
     break-inside: avoid;
     width: 100%;
@@ -234,6 +239,188 @@ a[href="#top"] {
     margin-top: 1em;
 }
 
-a[href="#top"] :hover {
+a[href="#top"]:hover {
+    text-decoration: none;
+}
+
+.bio a .paperclip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: auto;
+
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: translate(10%, -10%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.favorites input[type="radio"] {
+    position:absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.favorites{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.favorites label {
+    order: -1;
+    display:block;
+    cursor:pointer;
+    margin: 0 0.5rem 0 0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.4rem;
+    transition: background-color 0.25s ease, color 0.25s ease,
+                transform 0.15s ease, box-shadow 0.2s ease;
+    user-select: none;
+    background: transparent;
+    
+}
+
+.favorites label h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Abril Fatface', serif;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.favorites label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.favorites label + div {
+    display: none;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    border-radius: 0.6rem;
+    transition: box-shadow 0.25s ease, transform 0.2s ease, background-color 0.25s ease;
+}
+
+.favorites input [type="radio"] :checked + label {
+    background-color: rgba(75, 0, 130, 0.06);
+    box-shadow: 0 6px 18px rgba(75, 0,130, 0.12);
+}
+
+.favorites input[type="radio"]:checked + label h3 {
+    color: #4b0082;
+    font-weight: 900;
+    padding-bottom: 0.35rem;
+    border-bottom: 4px solid #4b0082
+}
+
+.favorites input [type="radio"]:checked + label + div {
+    display: flex;
+    width: 100%;
+    background-color: rgb(0,0,0,0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    min-height: 180px;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transform: translateY(0);
+}
+.favorites input[type="radio"]:checked + label + div > * {
+    max-width: 900px;
+    width: 100%;
+}
+
+.favorites input[type="radio"]:checked + label + div img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.favorites input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: stretch;
+}
+
+img{
+    max-width:100%;
+}
+
+.gallery a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease;
+    will-change: transform;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery a.row-span-2 {grid-row: span 2;}
+.gallery a.col-span-2{grid-column: span 2;}
+
+.gallery a:hover {
+    transform:scale(1.1);
+    z-index: 2;
+}
+
+@media (max-width: 100px) {
+    .gallery {grid-template-columns: repeat(3, 1fr);}
+}
+@media (max-width:700px) {
+    .gallery {grid-template-columns: repeat(2, 1fr);}
+}
+@media(max-width:420px) {
+    .gallery {grid-template-columns: 1fr;}
+}
+
+.width-wrap > a[href="#top"] {
+    margin-left: -25px;
+    position: sticky;
+    bottom: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.width-wrap > a[href="#top"] :hover {
+    transform: rotate(45deg);
+}
+
+a[href="#top"] {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    text-decoration: none;
+    display: inline-block;
+    margin-left: -25px;
+    position: sticky;
+    bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+a[href="#top"]:hover {
+    transform: rotate(45deg);
     text-decoration: none;
 }
