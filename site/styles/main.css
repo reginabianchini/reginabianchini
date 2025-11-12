@@ -183,7 +183,7 @@ h1 {
 }
 
 .bio {
-    column-count: 3;
+    column-width: 13em;
     column-gap: 2em;
 }
 .bio img{
@@ -194,8 +194,21 @@ h1 {
 }
 
 .bio a{
-    display: block;
+    display: inline-block;
     position: relative;
+}
+.bio a .paperclip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: auto;
+
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: translate(10%, -10%);
+    pointer-events: none;
+    z-index: 10;
 }
 
 .bio table {
@@ -215,6 +228,7 @@ h1 {
     font-weight: bold;
     margin-top: 0.5em;
 }
+
 img{
     max-width: 100%;
     height: auto;
@@ -227,34 +241,19 @@ img{
     box-shadow: 0 4px 12px rgba( 0,0,0,0.4);
 }
 
-footer {
-    font-size: 75%;
-    text-align: center;
-}
-
 a[href="#top"] {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     text-decoration: none;
     display: inline-block;
-    margin-top: 1em;
+    margin-top: -25px;
+    position: sticky;
+    bottom: 10px;
+    transition: transform 200ms ease;
 }
 
 a[href="#top"]:hover {
+    transform:rotate(45deg);
     text-decoration: none;
-}
-
-.bio a .paperclip {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: auto;
-
-    background: transparent !important;
-    box-shadow: none !important;
-    transform: translate(10%, -10%);
-    pointer-events: none;
-    z-index: 10;
 }
 
 .favorites input[type="radio"] {
@@ -285,7 +284,6 @@ a[href="#top"]:hover {
                 transform 0.15s ease, box-shadow 0.2s ease;
     user-select: none;
     background: transparent;
-    
 }
 
 .favorites label h3 {
@@ -343,24 +341,11 @@ a[href="#top"]:hover {
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-.favorites input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    margin: 0;
-    pointer-events: none;
-}
-
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 10px;
     align-items: stretch;
-}
-
-img{
-    max-width:100%;
 }
 
 .gallery a {
@@ -369,7 +354,7 @@ img{
     position: relative;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.25s ease;
+    transition: transform 200ms ease;
     will-change: transform;
 }
 
@@ -387,6 +372,11 @@ img{
     transform:scale(1.1);
     z-index: 2;
 }
+@media (max-width: 450px) {
+    .gallery a.col-span-2 {
+        grid-column: span 1 !important;
+    }
+}
 
 @media (max-width: 100px) {
     .gallery {grid-template-columns: repeat(3, 1fr);}
@@ -398,29 +388,144 @@ img{
     .gallery {grid-template-columns: 1fr;}
 }
 
-.width-wrap > a[href="#top"] {
-    margin-left: -25px;
-    position: sticky;
-    bottom: 10px;
-    display: inline-block;
-    transition: transform 0.3s ease;
+@media (max-width: 70px) {
+    .bio #making-a-table thead,
+    .bio #making-a-table tfoot,
+    .bio #making-a-table th{
+        display: none;
+    }
+    .bio #making-a-table td {
+        display: block;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    .bio #making-a-table caption {
+        caption-side: top;
+    }
+    .bio #making-a-table td:first-of-type{
+        padding-top: 0.3em;
+        font-weight: bold;
+    }
+    .bio #making-a-table td:last-of-type {
+        padding-bottom: 0.3em;
+        font-style: italic;
+        font-size: 0.8em;
+    }
+    .bio #making-a-table td:last-of-type::after{
+        content: "hrs/wk";
+    }
 }
 
-.width-wrap > a[href="#top"] :hover {
-    transform: rotate(45deg);
+@media (max-width: 800px) {
+    .favorites{
+        flex-direction: column;
+    }
+
+    .favorites >label {
+        margin-bottom: 0.5em;
+    }
+
+    .favorites > div {
+        margin-bottom: 1em;
+    }
 }
 
-a[href="#top"] {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    text-decoration: none;
-    display: inline-block;
-    margin-left: -25px;
-    position: sticky;
-    bottom: 10px;
-    transition: transform 0.3s ease;
+@media (max-width: 700px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    header nav a {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-top: none !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav a:hover {
+        border-top: none !important;
+        text-decoration: underline;
+    }
+
+}
+header nav input#menu-toggle,
+header nav .sandwich-icon {
+    display:none;
 }
 
-a[href="#top"]:hover {
-    transform: rotate(45deg);
-    text-decoration: none;
+@media (max-width: 700px) {
+    header nav input#menu-toggle {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    header nav .sandwich-icon {
+        display: block;
+        width: 40px;
+        height: 25px;
+        margin: 1em auto;
+        cursor: pointer;
+        position: relative;
+        border-top: 5px solid #4b0082;
+        box-sizing: border-box;
+    }
+    header nav .sandwich-icon::before,
+    header nav .sandwich-icon::after {
+        content: "";
+        display:block;
+        width: 40px;
+        border-top: 5px solid #4b0082;
+        position: absolute;
+        left: 0;
+    }
+
+    header nav .sandwich-icon::before {top: 5px;}
+    header nav .sandwich-icon::after {top: 15px;}
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 200ms ease;
+    }
+
+    header nav input#menu-toggle:checked + label.sandwich-icon + ul {
+        max-height: 500px;
+    }
+    header nav ul li a:hover{ text-decoration: underline; }
+}
+#menu-toggle,
+.sandwich-icon {
+    display: none;
+}
+
+@media(max-width:800px) {
+    #menu-toggle {
+        display:none;
+    }
+    .sandwich-icon {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items:center;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.2s ease;
+    }
+
+    #menu-toggle:checked + .sandwich-icon + ul {
+        height: 200px;
+    }
 }
