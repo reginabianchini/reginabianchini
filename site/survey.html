@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="/reginabianchini/site/images/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" href="/reginabianchini/site/images/favicon.ico">
+    <link rel="stylesheet" href="/reginabianchini/site/styles/normalize.css">
+    <link rel="stylesheet" href="/reginabianchini/site/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pangolin&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="author" content="Regina da Matta">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Regina's Website">
+    <title>My test page</title>
+    <!-- Found me! -->
+</head>
+
+<body>
+    <div class='width-wrap'>
+        <header id="top">
+        </header>
+        <nav>
+            <input type="checkbox" id="menu-toogle" />
+            <label for="menu-toggle" class="sandwich-icon"></label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="links.html">Links</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="survey.html">Survey</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div>
+                <h1>Survey</h1>
+                <form action="https://formspree.io/f/xdkwgrwo" method="POST">
+                    <label for="name_field">What is your name?</label>
+                    <input type="text" id="name_field" name="name_field" required>
+                    <br><br>
+                    <label for="email_field">What is your email?</label>
+                    <input type="email" id="email_field" name="email" required>
+                    <br><br>
+                    <label for="best_whole_number">Which whole number is best?</label>
+                    <input type="number" step="1" id="best_whole_number" name="best_whole_number" min="0" max="5000"
+                        required>
+                    <br><br>
+                    <label for="best_day">Which day is best</label>
+                    <input type="date" id="best_day" name="best_day" required>
+                    <br><br>
+                    <label for="best_bear">Which bear is best?</label>
+                    <select name="best_bear" id="best_bear">
+                        <option value="">&nbsp;</option>
+                        <option value="Black" id="Black">Black</option>
+                        <option value="Brown" id="Brown">Brown</option>
+                        <option value="Care" id="Care">Care</option>
+                        <option value="Panda" id="Panda">Panda</option>
+                        <option value="Polar" id="Polar">Polar</option>
+                        <option value="Teddy" id="Teddy">Teddy</option>
+                    </select>
+                    <br><br>
+                    <fieldset>
+                        <legend>Do you like radio buttons?</legend>
+                        <ul>
+
+                            <li> <label><input type="radio" name="enjoys_radio_buttons" value="Yes">
+                                    Yes</label></li>
+                            <li> <label><input type="radio" name="enjoys_radio_buttons" value="No">
+                                    No</label> </li>
+                            <li> <label><input type="radio" name="enjoys_radio_buttons" value="?" checked>
+                                    None of your business</label></li>
+                        </ul>
+                    </fieldset>
+                    <br><br>
+                    <label for="life_meaning">What is the meaning of life?</label>
+                    <textarea id="life_meaning" rows="5" cols="50">
+                    Enter the correct answer here
+                  </textarea>
+                    <button type="submit" value="Send">Submit</button>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <hr>
+            <blockquote>"Don't keep blaming yourself, blame yourself once and move on."
+                <br>
+                <cite>&mdash;<span class="author"> Homer Simpson</span></cite>
+            </blockquote>
+            <p>&copy; 2025
+                <a
+                    href="mailto:regina.bianchinidemirandadamatta@student.saultcollege.ca?subject=Message%20from%20CSD112%20Website">
+                    Regina da Matta
+                </a>
+            </p>
+
+        </footer>
+        <a href="#top" title="Back to top">◤</a>
+    </div>
+    <script src="/reginabianchini/site/scripts/appetize.js" defer></script>
+    <script src="scripts/order-online.js" defer></script>
+</body>
+
+</html>
